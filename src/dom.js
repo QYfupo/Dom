@@ -1,10 +1,12 @@
 window.dom = {
     find(selector, scope) {
-        return (scope || document).queryselectorAll(selector)
+        return (scope || document).querySelectorAll(selector)
     },
     style(node, name, value) {
         if (arguments.length === 3) {
-            node.Style[name] = value
+            console.log(node)
+            console.log(node.style)
+            node.style[name] = value
         } else if (arguments.length === 2) {
             if (typeof name === 'string') {
                 return node.style[name]
@@ -20,8 +22,6 @@ window.dom = {
         for (let i = 0; i < nodeList.length; i++) {
             fn.call(null, nodeList[i])
         }
-    },
+    }
 }
 
-let node = document.getElementById()
-node.insertBefore
